@@ -1,4 +1,4 @@
-package net.nekomura;
+package net.nekomura.wcountdown;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 
 public class TimeUtils {
     public static boolean isTimeFormat(String dfstr) {
-        boolean b = false;
+        boolean b;
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 

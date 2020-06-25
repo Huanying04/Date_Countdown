@@ -1,14 +1,13 @@
-package net.nekomura;
+package net.nekomura.wcountdown;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.util.Base64;
 
 public class ImageBase64 {
-    public static Image getFromBASE64(String imageBASE64) throws IOException {
+    public static Image getFromBASE64(String imageBASE64) {
         BufferedImage image = null;
         byte[] imageByte;
         try {

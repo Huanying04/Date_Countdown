@@ -1,4 +1,4 @@
-package net.nekomura;
+package net.nekomura.wcountdown;
 
 import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -59,7 +60,7 @@ public class ConfigUtils {
         c.weightx = 0.0;
         c.fill = GridBagConstraints.NONE;
 
-        int result = JOptionPane.showOptionDialog(null, cp,"設定",JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION, null, null, null);
+        int result = JOptionPane.showOptionDialog(null, cp,"設定", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, null, null);
 
         if (result == JOptionPane.OK_OPTION) {
             if(targetTimeField.getText().isEmpty()) {
@@ -73,7 +74,7 @@ public class ConfigUtils {
                 return;
             }
         }else if (result == JOptionPane.CLOSED_OPTION && !new File("config\\config.conf").exists()) {
-            int closecmd = JOptionPane.showOptionDialog(null, "請問是否要關閉程式?","提示", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_CANCEL_OPTION, null, null, null);
+            int closecmd = JOptionPane.showOptionDialog(null, "請問是否要關閉程式?","提示", JOptionPane.OK_CANCEL_OPTION, JOptionPane.YES_NO_CANCEL_OPTION, null, null, null);
             if(closecmd == JOptionPane.OK_OPTION) {
                 System.exit(0);
             }
@@ -93,7 +94,7 @@ public class ConfigUtils {
         /*建立config文件*/
         File configFile = new File("config\\config.conf");
         configFile.createNewFile();
-        OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream("config\\config.conf"),"UTF-8");
+        OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream("config\\config.conf"), StandardCharsets.UTF_8);
 
         JSONObject configJSON = new JSONObject();
         configJSON.put("ttime", targetTime);

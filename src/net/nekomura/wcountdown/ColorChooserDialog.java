@@ -1,4 +1,4 @@
-package net.nekomura;
+package net.nekomura.wcountdown;
 
 public class ColorChooserDialog {
 

@@ -1,4 +1,4 @@
-package net.nekomura;
+package net.nekomura.wcountdown;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimerTask;
 
-public class wcountdown {
+public class Main {
     static int mouseAtX;
     static int mouseAtY;
     public static void  main(String[] args) throws ParseException, IOException {
