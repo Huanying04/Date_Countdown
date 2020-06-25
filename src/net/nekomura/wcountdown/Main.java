@@ -55,7 +55,7 @@ public class Main {
         JLabel title = new JLabel(ConfigUtils.timeName);
         title.setBounds(0, 0, 400, 78);
         title.setFont(new Font("Microsoft JhengHei", Font.BOLD, 32));
-        title.setForeground(new Color(255, 0, 0));
+        title.setForeground(Color.RED);
         title.setHorizontalAlignment(JLabel.CENTER);
 
         JLabel bgLabel = new JLabel(new ImageIcon(ImageBase64.getFromBASE64(ResImages.bgBASE64)));
@@ -137,9 +137,15 @@ public class Main {
 
                     if((leftdays <= 0 & lefthours <= 0 & leftmins <= 0 & leftsecs <= 0) && !(leftdays == 0 && lefthours == 0 && leftmins == 0 && leftsecs == 0)) { //避免0:00:00:00還沒出現就直接跳"時間到了"
                         leftTimeLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 36));
-                        leftTimeLabel.setText("<html>The Time Has Come!</html>");
+                        leftTimeLabel.setText("The Time Has Come!");
                         leftTimeLabel.setForeground(Color.RED);
-                    }else leftTimeLabel.setText("<html><body><p style=\"text-align:center; width:300px\">" + leftdays + ":" + TimeUtils.keepTwoDigit(lefthours) + ":" + TimeUtils.keepTwoDigit(leftmins) + ":" + TimeUtils.keepTwoDigit(leftsecs) + "</p></body></html>");
+                    }else {
+                        leftTimeLabel.setText("<html><body><p style=\"text-align:center; width:300px\">" + leftdays + ":" + TimeUtils.keepTwoDigit(lefthours) + ":" + TimeUtils.keepTwoDigit(leftmins) + ":" + TimeUtils.keepTwoDigit(leftsecs) + "</p></body></html>");
+                        leftTimeLabel.setBounds(0, 80, 400, 188);
+                        leftTimeLabel.setHorizontalAlignment(JLabel.CENTER);
+                        leftTimeLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 58));
+                        leftTimeLabel.setForeground(new Color(51,51,51));
+                    }
 
                     title.setText(ConfigUtils.timeName);
 
