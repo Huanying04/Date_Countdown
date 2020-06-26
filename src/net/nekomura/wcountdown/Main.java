@@ -68,12 +68,14 @@ public class Main {
         exitButton.setContentAreaFilled(false);
         exitButton.setBorderPainted(false);
         exitButton.setBounds(320, 240, 74, 27);
+        exitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         exitButton.addActionListener(e -> System.exit(0));
 
         JButton settingButton = new JButton(new ImageIcon(ImageBase64.getFromBASE64(ResImages.settingBtnBASE64)));
         settingButton.setContentAreaFilled(false);
         settingButton.setBorderPainted(false);
         settingButton.setBounds(245, 240, 68, 27);
+        settingButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         settingButton.addActionListener(e -> {
             try {
                 ConfigUtils.set();
